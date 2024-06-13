@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { Typography, Box, Stack } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-
 import { Videos, Loader } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
@@ -21,7 +20,7 @@ const VideoDetail = () => {
   }, [id]);
 
   if(!videoDetail?.snippet) return <Loader />;
-
+  
   const { snippet: { title, channelId, channelTitle }, statistics: { viewCount, likeCount } } = videoDetail;
 
   return (
@@ -60,3 +59,4 @@ const VideoDetail = () => {
 };
 
 export default VideoDetail;
+
